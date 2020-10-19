@@ -7,8 +7,10 @@ const App = () => {
 	const [stored, setStored] = useState("");
 
 	const buttonPress = (button) => {
-		if (stored === "" && button === [0 - 9]) {
+		if (stored === "" && !isNaN(button)) {
 			setStored(button);
+		} else if (!isNaN(button)) {
+			setStored(stored + button);
 		}
 	};
 
